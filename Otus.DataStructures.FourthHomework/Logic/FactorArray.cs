@@ -2,7 +2,7 @@
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
-    public class FactorArray<T> : IArray<T>
+    public class FactorArray<T> : CustomArray<T>, IArray<T>
     {
         private object[] _array;
         private readonly int _factor;
@@ -15,7 +15,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
             _size = 0;
         }
 
-        public FactorArray() : this(50, 10)
+        public FactorArray() : this(2, 2)
         {
         }
 
@@ -33,6 +33,24 @@ namespace Otus.DataStructures.FourthHomework.Logic
             _size++;
         }
 
+        public void Add(T item, int index)
+        {
+            if (GetSize() == _array.Length)
+            {
+                var newArray = new object[_array.Length * _factor];
+
+                ShiftLeft(newArray, _array, item, index);
+
+                _array = newArray;
+            }
+            else
+            {
+                ShiftLeft(_array, _array, item, index);
+            }
+
+            _size++;
+        }
+
         public T Get(int index)
         {
             return (T) _array[index];
@@ -40,7 +58,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
 
         private void resize()
         {
-            Object[] newArray = new Object[_array.Length + _array.Length * _factor / 100];
+            var newArray = new object[_array.Length * _factor];
             Array.Copy(_array, 0, newArray, 0, _array.Length);
             _array = newArray;
         }

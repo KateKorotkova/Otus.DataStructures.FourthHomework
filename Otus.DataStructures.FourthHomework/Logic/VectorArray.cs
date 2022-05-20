@@ -2,7 +2,7 @@
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
-    public class VectorArray<T> : IArray<T>
+    public class VectorArray<T> : CustomArray<T>, IArray<T>
     {
         private object[] _array;
         private readonly int _vector;
@@ -15,7 +15,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
             _size = 0;
         }
 
-        public VectorArray() : this(10)
+        public VectorArray() : this(2)
         {
         }
 
@@ -29,6 +29,24 @@ namespace Otus.DataStructures.FourthHomework.Logic
             if (GetSize() == _array.Length)
                 resize();
             _array[_size] = item;
+            _size++;
+        }
+
+        public void Add(T item, int index)
+        {
+            if (GetSize() == _array.Length)
+            {
+                var newArray = new object[_array.Length + _vector];
+
+                ShiftLeft(newArray, _array, item, index);
+
+                _array = newArray;
+            }
+            else
+            {
+                ShiftLeft(_array, _array, item, index);
+            }
+
             _size++;
         }
 

@@ -2,7 +2,7 @@
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
-    public class SingleArray<T> : IArray<T>
+    public class SingleArray<T> : CustomArray<T>, IArray<T>
     {
         private object[] _array;
 
@@ -18,8 +18,17 @@ namespace Otus.DataStructures.FourthHomework.Logic
 
         public void Add(T item)
         {
-            resize();
+            Resize();
             _array[GetSize() - 1] = item;
+        }
+
+        public void Add(T item, int index)
+        {
+            var newArray = new object[GetSize() + 1];
+
+            ShiftLeft(newArray, _array, item, index);
+
+            _array = newArray;
         }
 
         public T Get(int index)
@@ -27,7 +36,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
             return (T) _array[index];
         }
 
-        private void resize()
+        private void Resize()
         {
             var newArray = new object[GetSize() + 1];
             Array.Copy(_array, 0, newArray, 0, GetSize());

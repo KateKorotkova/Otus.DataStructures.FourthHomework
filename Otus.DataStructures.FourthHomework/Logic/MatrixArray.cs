@@ -1,4 +1,6 @@
-﻿namespace Otus.DataStructures.FourthHomework.Logic
+﻿using System;
+
+namespace Otus.DataStructures.FourthHomework.Logic
 {
     public class MatrixArray<T> : IArray<T>
     {
@@ -31,6 +33,11 @@
             _array.Get(_size / _vector).Add(item);
             
             _size++;
+        }
+
+        public void Add(T item, int index)
+        {
+            throw new NotImplementedException();
         }
 
         public T Get(int index)

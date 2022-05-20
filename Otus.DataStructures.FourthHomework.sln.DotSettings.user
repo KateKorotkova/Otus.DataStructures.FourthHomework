@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=72a797ea_002D7d73_002D4895_002D91c9_002Dcf6889a9833a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestInsertingInTheEnd #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.SingleArrayTests.TestInsertingInTheEnd&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=81ffa6ad_002D7511_002D40aa_002D88ca_002Dadf1b674ecba/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestInsertingInTheEnd" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.SingleArrayTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.VectorArrayTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.FactorArrayTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
