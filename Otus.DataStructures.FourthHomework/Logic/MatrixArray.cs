@@ -15,7 +15,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
             _size = 0;
         }
 
-        public MatrixArray() : this(10)
+        public MatrixArray() : this(2)
         {
 
         }
@@ -37,7 +37,17 @@ namespace Otus.DataStructures.FourthHomework.Logic
 
         public void Add(T item, int index)
         {
-            throw new NotImplementedException();
+            var resultIndex = index % _vector;
+
+            if (_size == _array.GetSize() * _vector)
+            {
+                _array.Add(new VectorArray<T>(_vector));
+                resultIndex = 0;
+            }
+
+            _array.Get(_size / _vector).Add(item, resultIndex);
+
+            _size++;
         }
 
         public T Remove(int index)
