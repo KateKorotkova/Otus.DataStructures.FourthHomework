@@ -40,6 +40,11 @@ namespace Otus.DataStructures.FourthHomework.Logic
             throw new NotImplementedException();
         }
 
+        public T Remove(int index)
+        {
+            throw new NotImplementedException();
+        }
+
         public T Get(int index)
         {
             return _array.Get(index / _vector).Get(index % _vector);
