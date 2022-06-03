@@ -46,6 +46,32 @@ namespace Tests
             Assert.That(customArray.Get(4), Is.EqualTo(2));
         }
 
+        [Test]
+        public void Removing_From_The_End()
+        {
+            var customArray = new VectorArray<int>();
+            FillArray(customArray);
+
+            var removedElement = customArray.Remove(2);
+
+            Assert.That(removedElement, Is.EqualTo(2));
+            Assert.That(customArray.Get(0), Is.EqualTo(0));
+            Assert.That(customArray.Get(1), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Removing_From_The_Middle()
+        {
+            var customArray = new VectorArray<int>();
+            FillArray(customArray);
+
+            var removedElement = customArray.Remove(1);
+
+            Assert.That(removedElement, Is.EqualTo(1));
+            Assert.That(customArray.Get(0), Is.EqualTo(0));
+            Assert.That(customArray.Get(1), Is.EqualTo(2));
+        }
+
 
         #region Helpers
 

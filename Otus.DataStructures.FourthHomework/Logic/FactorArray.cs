@@ -39,16 +39,21 @@ namespace Otus.DataStructures.FourthHomework.Logic
             {
                 var newArray = new object[_array.Length * _factor];
 
-                ShiftLeft(newArray, _array, item, index);
+                AddItemWithShiftLeft(newArray, _array, item, index);
 
                 _array = newArray;
             }
             else
             {
-                ShiftLeft(_array, _array, item, index);
+                AddItemWithShiftLeft(_array, _array, item, index);
             }
 
             _size++;
+        }
+
+        public T Remove(int index)
+        {
+            return RemoveItemWithShiftLeft(ref _array, index);
         }
 
         public T Get(int index)

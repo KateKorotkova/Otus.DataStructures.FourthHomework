@@ -6,8 +6,8 @@
         void Add(T item);
         T Get(int index);
 
-        // HW
+        //HW
         void Add(T item, int index);
-        // T remove(int index); // return deleted element
+        T Remove(int index);
     }
 }

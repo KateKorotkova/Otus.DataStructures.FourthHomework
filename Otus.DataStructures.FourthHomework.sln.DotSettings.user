@@ -5,9 +5,9 @@
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=81ffa6ad_002D7511_002D40aa_002D88ca_002Dadf1b674ecba/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestInsertingInTheEnd" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.SingleArrayTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.VectorArrayTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.FactorArrayTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Not&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::199368F5-B8D7-4992-A65E-892C05A3DDD3::.NETCoreApp,Version=v3.1::Tests.MatrixArrayTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Not&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
