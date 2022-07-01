@@ -1,5 +1,4 @@
-﻿using System;
-using Otus.DataStructures.FourthHomework.Logic.Common;
+﻿using Otus.DataStructures.FourthHomework.Logic.Common;
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
@@ -7,7 +6,10 @@ namespace Otus.DataStructures.FourthHomework.Logic
     {
         private int _size;
         private readonly int _vector;
-        private IArray<IArray<T>> _array;
+        private readonly IArray<IArray<T>> _array;
+
+        private bool IsSizeExceeded => _size == _array.GetSize() * _vector;
+
 
         public MatrixArray(int vector)
         {
@@ -28,37 +30,65 @@ namespace Otus.DataStructures.FourthHomework.Logic
 
         public void Add(T item)
         {
-            if (_size == _array.GetSize() * _vector)
+            if (IsSizeExceeded)
                 _array.Add(new VectorArray<T>(_vector));
 
-            _array.Get(_size / _vector).Add(item);
+            var resultArray = GetInitialArray();
+            resultArray.Add(item);
             
             _size++;
         }
 
         public void Add(T item, int index)
         {
-            var resultIndex = index % _vector;
+            var resultIndex = GetResultIndex(index);
 
-            if (_size == _array.GetSize() * _vector)
+            if (IsSizeExceeded)
             {
                 _array.Add(new VectorArray<T>(_vector));
                 resultIndex = 0;
             }
 
-            _array.Get(_size / _vector).Add(item, resultIndex);
+            var resultArray = GetInitialArray();
+            resultArray.Add(item, resultIndex);
 
             _size++;
         }
 
         public T Remove(int index)
         {
-            throw new NotImplementedException();
+            var resultArray = GetInitialArray(index);
+            var resultIndex = GetResultIndex(index);
+            
+            return resultArray.Remove(resultIndex);
         }
 
         public T Get(int index)
         {
-            return _array.Get(index / _vector).Get(index % _vector);
+            var resultArray = GetInitialArray(index);
+            var resultIndex = GetResultIndex(index);
+            
+            return resultArray.Get(resultIndex);
         }
+
+
+        #region Support Methods
+
+        private IArray<T> GetInitialArray()
+        {
+            return _array.Get(_size / _vector);
+        }
+
+        private IArray<T> GetInitialArray(int index)
+        {
+            return _array.Get(index / _vector);
+        }
+
+        private int GetResultIndex(int index)
+        {
+            return index % _vector;
+        }
+
+        #endregion
     }
 }
