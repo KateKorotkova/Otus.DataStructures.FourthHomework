@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Otus.DataStructures.FourthHomework.Logic;
+using Otus.DataStructures.FourthHomework.Logic.Common;
 
 namespace Tests
 {

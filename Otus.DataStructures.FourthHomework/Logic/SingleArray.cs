@@ -1,4 +1,5 @@
 ﻿using System;
+using Otus.DataStructures.FourthHomework.Logic.Common;
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
@@ -6,10 +7,12 @@ namespace Otus.DataStructures.FourthHomework.Logic
     {
         private object[] _array;
 
+        
         public SingleArray()
         {
             _array = new object[0];
         }
+
 
         public int GetSize()
         {
@@ -41,13 +44,16 @@ namespace Otus.DataStructures.FourthHomework.Logic
             return (T) _array[index];
         }
 
+
+        #region Support Methods
+
         private void Resize()
         {
             var newArray = new object[GetSize() + 1];
             Array.Copy(_array, 0, newArray, 0, GetSize());
-            //        for (int j = 0; j < GetSize(); j ++)
-            //            newArray[j] = array[j];
             _array = newArray;
         }
+
+        #endregion
     }
 }

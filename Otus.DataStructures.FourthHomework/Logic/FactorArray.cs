@@ -1,4 +1,5 @@
 ﻿using System;
+using Otus.DataStructures.FourthHomework.Logic.Common;
 
 namespace Otus.DataStructures.FourthHomework.Logic
 {
@@ -7,6 +8,7 @@ namespace Otus.DataStructures.FourthHomework.Logic
         private object[] _array;
         private readonly int _factor;
         private int _size;
+
 
         public FactorArray(int factor, int initLength)
         {
@@ -28,7 +30,8 @@ namespace Otus.DataStructures.FourthHomework.Logic
         public void Add(T item)
         {
             if (GetSize() == _array.Length)
-                resize();
+                Resize();
+
             _array[_size] = item;
             _size++;
         }
@@ -61,11 +64,16 @@ namespace Otus.DataStructures.FourthHomework.Logic
             return (T) _array[index];
         }
 
-        private void resize()
+
+        #region Support Methods
+
+        private void Resize()
         {
             var newArray = new object[_array.Length * _factor];
             Array.Copy(_array, 0, newArray, 0, _array.Length);
             _array = newArray;
         }
+
+        #endregion
     }
 }

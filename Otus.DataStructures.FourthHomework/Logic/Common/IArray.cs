@@ -1,4 +1,4 @@
-﻿namespace Otus.DataStructures.FourthHomework.Logic
+﻿namespace Otus.DataStructures.FourthHomework.Logic.Common
 {
     public interface IArray<T>
     {
